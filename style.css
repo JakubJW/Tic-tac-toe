@@ -1,0 +1,126 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 460px;
+    margin: 0;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    
+}
+
+.restart {
+    font-family: sans-serif;
+    font-size: 32px;
+    margin: .5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10vw;
+    flex-wrap: wrap;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+.board {
+    width: 442px;
+    height: 442px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.field {
+    width: 146px;
+    height: 146px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.field:hover {
+    background-color: rgba(136, 136, 136, 0.142);
+}
+
+.unclickable {
+    cursor: default;
+}
+
+.unclickable:hover {
+    background-color: transparent;
+}
+
+.top_left {
+    border-right: 2px dashed;
+    border-bottom: 2px dashed;
+}
+
+.top_right {
+    border-left: 2px dashed;
+    border-bottom: 2px dashed;
+}
+
+.top_middle {
+    border-bottom: 2px dashed;
+}
+
+.middle_left {
+    border-right: 2px dashed;
+}
+
+.middle_right {
+    border-left: 2px dashed;
+}
+
+.bottom_left {
+    border-top: 2px dashed;
+    border-right: 2px dashed;
+}
+
+.bottom_middle {
+    border-top: 2px dashed;
+}
+
+.bottom_right {
+    border-left: 2px dashed;
+    border-top: 2px dashed;
+}
+
+.cros {
+    font-size: 120px;
+    color: violet;
+    transition: all .5s ease;
+}
+
+.circ {
+    font-size: 120px;
+    color: limegreen;
+    transition: all .5s ease;
+}
+
+#restartBtn {
+    cursor: pointer;
+}
+
+.restartAnimation {
+    opacity: 0;
+    transform: rotateY(90deg);
+}
