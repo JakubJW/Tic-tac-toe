@@ -58,7 +58,9 @@ restart.addEventListener("click", function(){
         firstPlayerBoard.removeChild(firstPlayerBoard.lastChild);
     }
     
-    else secondPlayerBoard.removeChild(secondPlayerBoard.lastChild);
+    else if(secondPlayerBoard.lastChild.innerText=="WINNER"){
+        secondPlayerBoard.removeChild(secondPlayerBoard.lastChild);
+    }
     
 });
 
