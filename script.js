@@ -36,19 +36,23 @@ restart.addEventListener("click", function(){
             if(field.classList.contains("unclickable")){
                 
                 if(field.classList.contains("circle")){
+                    const fieldChild = field.childNodes[0];
+                    fieldChild.classList.add("restartAnimation");
+                    fieldChild.addEventListener("transitionend", function(){
+                        field.removeChild(fieldChild);
+                    });
                     field.classList.remove("circle");
                 }
                 
                 else if (field.classList.contains("cross")){
                     field.classList.remove("cross");
+                    const fieldChild = field.childNodes[0];
+                    fieldChild.classList.add("restartAnimation");
+                    fieldChild.addEventListener("transitionend", function(){
+                        field.removeChild(fieldChild);
+                    });
                 }
 
-                const fieldChild = field.childNodes[0];
-                fieldChild.classList.add("restartAnimation");
-                fieldChild.addEventListener("transitionend", function(){
-                    field.removeChild(fieldChild);
-                });
-                
                 field.classList.remove("unclickable");
             }
         }
@@ -61,8 +65,15 @@ restart.addEventListener("click", function(){
     else if(secondPlayerBoard.lastChild.innerText=="WINNER"){
         secondPlayerBoard.removeChild(secondPlayerBoard.lastChild);
     }
-    
 });
+
+function freeze(element){
+    element.forEach(field => {
+        if(field.nodeType!="3"){
+            if(!field.classList.contains("unclickable")) field.classList.add("unclickable");
+        }
+    });
+}
 
 function winCheck(element) {
     //row check
@@ -72,6 +83,7 @@ function winCheck(element) {
         &&element[5].classList.contains("circle"))
         ){
             firstPlayerBoard.appendChild(winner);
+            freeze(element);
         }
     
     else if( 
@@ -80,6 +92,7 @@ function winCheck(element) {
         &&element[3].classList.contains("cross"))
         ){
             secondPlayerBoard.appendChild(winner);
+            freeze(element);
         }
     
     else if(
@@ -88,6 +101,7 @@ function winCheck(element) {
         &&element[11].classList.contains("circle"))
         ){
             firstPlayerBoard.appendChild(winner);
+            freeze(element);
         }
         
     else if(    
@@ -96,6 +110,7 @@ function winCheck(element) {
         &&element[11].classList.contains("cross"))
         ){
             secondPlayerBoard.appendChild(winner);
+            freeze(element);
         }
 
     else if(
@@ -104,6 +119,7 @@ function winCheck(element) {
         &&element[17].classList.contains("circle"))
         ){
             firstPlayerBoard.appendChild(winner);
+            freeze(element);
         }
         
     else if(
@@ -112,6 +128,7 @@ function winCheck(element) {
         &&element[17].classList.contains("cross"))
         ){
             secondPlayerBoard.appendChild(winner);
+            freeze(element);
         }
 
     //column check
@@ -121,6 +138,7 @@ function winCheck(element) {
         &&element[13].classList.contains("circle"))
         ){
             firstPlayerBoard.appendChild(winner);
+            freeze(element);
         }
 
     else if(
@@ -129,6 +147,7 @@ function winCheck(element) {
         &&element[13].classList.contains("cross"))
         ){
             secondPlayerBoard.appendChild(winner);
+            freeze(element);
         }
 
     else if(
@@ -137,6 +156,7 @@ function winCheck(element) {
         &&element[15].classList.contains("circle"))
         ){
             firstPlayerBoard.appendChild(winner);
+            freeze(element);
         }
 
     else if(
@@ -145,6 +165,7 @@ function winCheck(element) {
         &&element[15].classList.contains("cross"))
         ){
             secondPlayerBoard.appendChild(winner);
+            freeze(element);
         }
 
     else if(
@@ -153,6 +174,7 @@ function winCheck(element) {
         &&element[17].classList.contains("circle"))
         ){
             firstPlayerBoard.appendChild(winner);
+            freeze(element);
         }
         
     else if(
@@ -161,6 +183,7 @@ function winCheck(element) {
         &&element[17].classList.contains("cross"))
         ){
             secondPlayerBoard.appendChild(winner);
+            freeze(element);
         }
     
     //diagonal check
@@ -171,6 +194,7 @@ function winCheck(element) {
         &&element[17].classList.contains("circle"))
         ){
             firstPlayerBoard.appendChild(winner);
+            freeze(element);
         }
     
     else if(
@@ -179,6 +203,7 @@ function winCheck(element) {
         &&element[17].classList.contains("cross"))
         ){
             secondPlayerBoard.appendChild(winner);
+            freeze(element);
         }
 
     else if(
@@ -187,6 +212,7 @@ function winCheck(element) {
         &&element[13].classList.contains("circle"))
         ){
             firstPlayerBoard.appendChild(winner);
+            freeze(element);
         }
     
     else if(
@@ -195,6 +221,7 @@ function winCheck(element) {
         &&element[13].classList.contains("cross"))
         ){
             secondPlayerBoard.appendChild(winner);
+            freeze(element);
         }
 }
 
