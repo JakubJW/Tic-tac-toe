@@ -32,7 +32,7 @@ fields.forEach(field => {
 
 restart.addEventListener("click", function(){
     fields.forEach(field => {
-        if(field.nodeType!=="3"){
+        if(field.nodeType!==3){
             if(field.classList.contains("unclickable")){
                 
                 if(field.classList.contains("circle")){
@@ -69,7 +69,7 @@ restart.addEventListener("click", function(){
 
 function freeze(element){
     element.forEach(field => {
-        if(field.nodeType!=="3"){
+        if(field.nodeType!==3){
             if(!field.classList.contains("unclickable")) field.classList.add("unclickable");
         }
     });
@@ -84,6 +84,7 @@ function winCheck(element) {
         ){
             firstPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
     
     else if( 
@@ -93,6 +94,7 @@ function winCheck(element) {
         ){
             secondPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
     
     else if(
@@ -102,6 +104,7 @@ function winCheck(element) {
         ){
             firstPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
         
     else if(    
@@ -111,6 +114,7 @@ function winCheck(element) {
         ){
             secondPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
 
     else if(
@@ -120,6 +124,7 @@ function winCheck(element) {
         ){
             firstPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
         
     else if(
@@ -129,6 +134,7 @@ function winCheck(element) {
         ){
             secondPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
 
     //column check
@@ -139,6 +145,7 @@ function winCheck(element) {
         ){
             firstPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
 
     else if(
@@ -148,6 +155,7 @@ function winCheck(element) {
         ){
             secondPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
 
     else if(
@@ -157,6 +165,7 @@ function winCheck(element) {
         ){
             firstPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
 
     else if(
@@ -166,6 +175,7 @@ function winCheck(element) {
         ){
             secondPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
 
     else if(
@@ -175,6 +185,7 @@ function winCheck(element) {
         ){
             firstPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
         
     else if(
@@ -184,6 +195,7 @@ function winCheck(element) {
         ){
             secondPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
     
     //diagonal check
@@ -195,6 +207,7 @@ function winCheck(element) {
         ){
             firstPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
     
     else if(
@@ -204,6 +217,7 @@ function winCheck(element) {
         ){
             secondPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
 
     else if(
@@ -213,6 +227,7 @@ function winCheck(element) {
         ){
             firstPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
     
     else if(
@@ -222,6 +237,7 @@ function winCheck(element) {
         ){
             secondPlayerBoard.appendChild(winner);
             freeze(element);
+            return 1;
         }
 }
 
