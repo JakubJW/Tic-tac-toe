@@ -32,7 +32,7 @@ fields.forEach(field => {
 
 restart.addEventListener("click", function(){
     fields.forEach(field => {
-        if(field.nodeType!="3"){
+        if(field.nodeType!=="3"){
             if(field.classList.contains("unclickable")){
                 
                 if(field.classList.contains("circle")){
@@ -58,18 +58,18 @@ restart.addEventListener("click", function(){
         }
     })
     player = 1;
-    if(firstPlayerBoard.lastChild.innerText=="WINNER"){
+    if(firstPlayerBoard.lastChild.innerText==="WINNER"){
         firstPlayerBoard.removeChild(firstPlayerBoard.lastChild);
     }
     
-    else if(secondPlayerBoard.lastChild.innerText=="WINNER"){
+    else if(secondPlayerBoard.lastChild.innerText==="WINNER"){
         secondPlayerBoard.removeChild(secondPlayerBoard.lastChild);
     }
 });
 
 function freeze(element){
     element.forEach(field => {
-        if(field.nodeType!="3"){
+        if(field.nodeType!=="3"){
             if(!field.classList.contains("unclickable")) field.classList.add("unclickable");
         }
     });
